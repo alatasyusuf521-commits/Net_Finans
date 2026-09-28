@@ -211,6 +211,7 @@ namespace MuhasebeOtomasyonu.Forms
             _printRowIndex = 0; // her yazdırmada baştan başla
 
             PrintDocument printDoc = new PrintDocument();
+            printDoc.BeginPrint += (s, ev) => { _printRowIndex = 0; };
             printDoc.PrintPage += PrintDoc_PrintPage;
 
             PrintPreviewDialog printPreview = new PrintPreviewDialog();
